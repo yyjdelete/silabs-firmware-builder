@@ -2,6 +2,11 @@ name: Build firmwares
 
 on:
   workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
   pull_request:
     paths-ignore:
       - '.gitignore'
@@ -188,6 +193,9 @@ jobs:
           path: outputs/*
           compression-level: 9
           if-no-files-found: error
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
 
   generate-manifest:
     name: Generate manifest
