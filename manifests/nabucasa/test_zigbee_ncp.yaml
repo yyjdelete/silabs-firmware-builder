@@ -15,7 +15,7 @@ add_components:
   instance: [board_activity]
 
 remove_components:
-- id: debug_swo
+- id: iostream_vuart
 
 configuration:
   EMBER_CHILD_TABLE_SIZE: 32
@@ -47,8 +47,8 @@ c_defines:
   SL_IOSTREAM_USART_VCOM_RTS_PORT: gpioPortC
   SL_IOSTREAM_USART_VCOM_RTS_PIN:  3
 
-  SL_DEBUG_SWO_PORT: gpioPortC
-  SL_DEBUG_SWO_PIN:  1
+#  SL_DEBUG_SWO_PORT: gpioPortC
+#  SL_DEBUG_SWO_PIN:  1
 
   SL_SIMPLE_LED_BOARD_ACTIVITY_POLARITY: SL_SIMPLE_LED_POLARITY_ACTIVE_LOW
   SL_SIMPLE_LED_BOARD_ACTIVITY_PORT:     gpioPortC

@@ -341,7 +341,6 @@ def main():
         manifest.get("toolchain_settings", [])
     )
 
-	print(base_project["component"].keys())
     # Remove components
     for component in manifest.get("remove_components", []):
         try:
